@@ -1,0 +1,38 @@
+{
+  "name": "nuxt-app",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt build && nuxt preview",
+    "postinstall": "nuxt prepare",
+    "format": "prettier -w **/*.ts **/*.vue **/*.css",
+    "test": "nr format && clear && nr dev",
+    "start": "nr build && nr preview"
+  },
+  "dependencies": {
+    "@stefanobartoletti/nuxt-social-share": "1.2.2",
+    "got": "^14.4.7",
+    "metascraper": "^5.46.15",
+    "metascraper-description": "^5.46.15",
+    "metascraper-image": "^5.46.15",
+    "metascraper-logo": "^5.46.15",
+    "metascraper-title": "^5.46.15",
+    "metascraper-url": "^5.46.15",
+    "nuxt": "^3.17.4",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@antfu/ni": "^24.3.0",
+    "@nuxtjs/seo": "3.0.3",
+    "@tailwindcss/vite": "latest",
+    "prettier": "^3.5.3",
+    "prettier-plugin-css-order": "^2.1.2",
+    "prettier-plugin-organize-attributes": "^1.0.0",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "latest"
+  },
+  "packageManager": "pnpm@10.10.0",
+  "license": "MIT"
+}
