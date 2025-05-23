@@ -1,6 +1,6 @@
 # SiteCraper
 
-Analyze and share website previews instantly with SEO-friendly metadata.
+Boost productivity with SiteScrape — a browser-based web scraping tool that helps you collect website data quickly and securely. Ideal for research and automation.
 
 ## Credits
 

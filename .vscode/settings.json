@@ -1,4 +1,16 @@
 {
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+  "editor.formatOnSave": true,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "tsconfig.json": "tsconfig*,env.d.ts",
+    "nuxt.config.ts": "*.config.ts,*.config.js,.prettier*,.editorconfig",
+    "package.json": "package*, pnpm*",
+    ".gitignore": "*ignore"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "IDX.aI.enableInlineCompletion": true,
   "IDX.aI.enableCodebaseIndexing": true
 }

@@ -8,7 +8,7 @@
       <div class="text-center sm:text-left">
         <h1>SiteScrape</h1>
         <p class="mt-2 max-w-md text-base text-gray-600">
-          Analyze and share website previews instantly with SEO-friendly metadata.
+          Boost productivity with SiteScrape — a browser-based web scraping tool that helps you collect website data quickly and securely. Ideal for research and automation.
         </p>
       </div>
       <img
@@ -74,8 +74,8 @@
       </div>
       <p class="font-semibold text-red-600" v-if="error" role="alert">{{ error }}</p>
       <template v-if="meta && !error && !loading">
-        <MetaCard :meta="meta" />
-        <MetaTable :meta="meta" />
+        <LazyMetaCard :meta="meta" />
+        <LazyMetaTable :meta="meta" />
       </template>
     </section>
 
@@ -105,7 +105,7 @@
     <!-- HISTORY SECTION -->
     <section class="mt-10 border-t pt-10" id="history">
       <h2 class="mb-2 text-lg font-semibold">📜 History</h2>
-      <MetaHistory @select="fetchMetaFromHistory" />
+      <LazyMetaHistory @select="fetchMetaFromHistory" />
     </section>
   </div>
 </template>
@@ -124,9 +124,17 @@ const router = useRouter()
 
 useSeoMeta({
   title: 'SiteScrape - Website Meta Analyzer',
-  description: 'Analyze and share website previews instantly with SEO-friendly metadata.',
-  ogDescription: 'Analyze and share website previews instantly with SEO-friendly metadata.',
-  twitterDescription: 'Analyze and share website previews instantly with SEO-friendly metadata.',
+  description: 'Boost productivity with SiteScrape — a browser-based web scraping tool that helps you collect website data quickly and securely. Ideal for research and automation.',
+  ogDescription: 'Boost productivity with SiteScrape — a browser-based web scraping tool that helps you collect website data quickly and securely. Ideal for research and automation.',
+  twitterDescription: 'Boost productivity with SiteScrape — a browser-based web scraping tool that helps you collect website data quickly and securely. Ideal for research and automation.',
+})
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://site-scrape.netlify.app/'
+    }
+  ]
 })
 
 const normalizeUrl = (input: string): string => {

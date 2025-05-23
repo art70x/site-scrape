@@ -45,7 +45,7 @@ export default {
   site: {
     url: 'https://site-scrape.netlify.app/',
     name: 'SiteCrape',
-    description: ' Analyze and share website previews instantly with SEO-friendly metadata.',
+    description: 'Boost productivity with SiteScrape — a browser-based web scraping tool that helps you collect website data quickly and securely. Ideal for research and automation.',
   },
 
   socialShare: {
