@@ -4,11 +4,26 @@
 @custom-variant hover (&:hover);
 
 @utility ta-* {
-  transition-duration: calc(--value(integer, [integer]) * 0.875ms);
-  transition-property: all;
+  transition-duration: calc(--value(integer, [integer]) * 0.925ms);
+  transition-property:
+    color,
+    background-color,
+    border-color,
+    text-decoration-color,
+    fill,
+    stroke,
+    opacity,
+    box-shadow,
+    transform,
+    translate,
+    scale,
+    rotate,
+    filter,
+    -webkit-backdrop-filter,
+    backdrop-filter;
   transition-timing-function: ease;
   @media (prefers-reduced-motion: reduced) {
-    transition-duration: calc(--value(integer, [integer]) * 0.625ms);
+    transition-duration: calc(--value(integer, [integer]) * 0.675ms);
   }
 }
 *:focus-visible {
@@ -25,7 +40,7 @@
   --color-primary-hover: #0061ff;
 }
 :root {
-  --background: var(--color-gray-50);
+  --background: var(--color-gray-100);
   --foreground: var(--color-zinc-950);
 }
 .dark {
@@ -71,5 +86,5 @@
   }
 }
 @utility btn {
-  @apply rounded-md bg-primary px-4 py-2 font-medium text-gray-200 ta-200 hover:bg-primary-hover focus:ring-2 focus:ring-primary-hover focus:ring-offset-2;
+  @apply rounded-md bg-primary px-4 py-2 font-medium text-zinc-100 ta-200 hover:bg-primary-hover focus:ring-2 focus:ring-primary-hover focus:ring-offset-2;
 }

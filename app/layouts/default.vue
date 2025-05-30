@@ -1,6 +1,6 @@
 <template>
   <a
-    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-gray-100 focus:px-4 focus:py-2 focus:text-gray-900 focus:shadow-lg"
+    class="sr-only rounded-2xl outline-offset-2 outline-primary focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-foreground/70 focus:px-4 focus:py-2 focus:text-background focus:shadow-xl focus:outline-2"
     href="#main"
     >Skip to content</a
   >

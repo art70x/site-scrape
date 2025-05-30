@@ -7,7 +7,7 @@
     "preview": "nuxt build && nuxt preview",
     "postinstall": "nuxt prepare",
     "format": "prettier -w **/*.ts app",
-    "test": "nr format && cls && nr dev",
+    "test": "nr format && clear && nr dev",
     "start": "nr build && nr preview"
   },
   "dependencies": {

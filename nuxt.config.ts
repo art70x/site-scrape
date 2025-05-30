@@ -18,12 +18,13 @@ export default {
 
   runtimeConfig: {
     public: {
-      siteUrl: 'https://site-scrape.netlify.app/',
+      siteUrl: 'https://sitescrape.netlify.app',
+      description:
+        'Easily scrape and extract website data with SiteScrape — a streamlined, browser-based web scraping tool built for speed, simplicity, and convenience.',
     },
   },
 
   build: {
-    cssMinify: true,
     minify: 'terser',
     terser: {
       terserOptions: {
@@ -40,27 +41,29 @@ export default {
 
   css: ['@/main.css'],
 
-  modules: ['@nuxtjs/seo', '@stefanobartoletti/nuxt-social-share'],
+  modules: ['@nuxtjs/seo', '@stefanobartoletti/nuxt-social-share', '@nuxt/icon', '@nuxt/fonts'],
 
   site: {
-    url: 'https://site-scrape.netlify.app/',
-    name: 'SiteCrape',
-    description: 'Boost productivity with SiteScrape — a browser-based web scraping tool that helps you collect website data quickly and securely. Ideal for research and automation.',
+    url: 'https://sitescrape.netlify.app',
+    name: 'SiteScrape',
+    description:
+      'Easily scrape and extract website data with SiteScrape — a streamlined, browser-based web scraping tool built for speed, simplicity, and convenience.',
   },
 
   socialShare: {
-    baseUrl: 'https://site-scrape.netlify.app/',
+    baseUrl: 'https://sitescrape.netlify.app',
   },
 
   experimental: {
     renderJsonPayloads: true,
+    inlineSSRStyles: true,
   },
 
   routeRules: {
-    '/*.{svg,css,webp}': {
+    '/*.{svg,css,woff2,png}': {
       swr: true,
       cache: {
-        maxAge: 43200,
+        maxAge: 432000,
       },
     },
   },
