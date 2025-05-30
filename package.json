@@ -6,12 +6,13 @@
     "generate": "nuxt generate",
     "preview": "nuxt build && nuxt preview",
     "postinstall": "nuxt prepare",
-    "format": "prettier -w **/*.ts **/*.vue **/*.css",
-    "test": "nr format && clear && nr dev",
+    "format": "prettier -w **/*.ts app",
+    "test": "nr format && cls && nr dev",
     "start": "nr build && nr preview"
   },
   "dependencies": {
     "@stefanobartoletti/nuxt-social-share": "1.2.2",
+    "cheerio": "^1.0.0",
     "got": "^14.4.7",
     "metascraper": "^5.46.15",
     "metascraper-description": "^5.46.15",
@@ -19,14 +20,16 @@
     "metascraper-logo": "^5.46.15",
     "metascraper-title": "^5.46.15",
     "metascraper-url": "^5.46.15",
-    "nuxt": "^3.17.4",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
     "@antfu/ni": "^24.3.0",
+    "@nuxt/fonts": "0.11.4",
+    "@nuxt/icon": "1.13.0",
     "@nuxtjs/seo": "3.0.3",
     "@tailwindcss/vite": "latest",
+    "nuxt": "^3.17.4",
     "prettier": "^3.5.3",
     "prettier-plugin-css-order": "^2.1.2",
     "prettier-plugin-organize-attributes": "^1.0.0",
