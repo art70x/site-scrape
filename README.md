@@ -12,4 +12,4 @@ Easily scrape and extract website data with SiteScrape — a streamlined, browse
 
 The code in this repository is licensed under **MIT License**.
 
-[![License](https://img.shields.io/github/license/art70x/site-scrape?style=for-the-badge)](https://github.com/art70x/site-scrape/LICENSE)
+[![License](https://img.shields.io/github/license/art70x/site-scrape?style=for-the-badge)](./LICENSE)
