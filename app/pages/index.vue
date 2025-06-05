@@ -28,7 +28,7 @@
         <div>
           <label class="sr-only" for="url-input">Enter website URL</label>
           <input
-            class="w-full rounded-lg border border-gray-400 px-4 py-2 tracking-wide shadow-sm focus:border-primary focus:ring-2 ring-offset-1 focus:ring-primary/40 focus:outline-none"
+            class="w-full rounded-lg border border-gray-400 px-4 py-2 tracking-wide shadow-sm ring-offset-1 focus:border-primary focus:ring-2 focus:ring-primary/40 focus:outline-none"
             id="url-input"
             v-model="url"
             type="url"
@@ -138,7 +138,7 @@ const { meta, error, loading, fetchMeta } = useMetaPreview()
 const route = useRoute()
 const router = useRouter()
 const {
-  public: { siteUrl },
+  public: { siteUrl, description },
 } = useRuntimeConfig()
 
 // Constants
@@ -148,7 +148,7 @@ const SHARE_COPY_TIMEOUT = 2000
 // SEO Configuration
 useSeoMeta({
   title: 'SiteScrape - Website Meta Analyzer',
-  description: useRuntimeConfig().public.description,
+  description: description,
   ogDescription:
     'Scrape and extract website data easily with SiteScrape — a fast, simple, browser-based web scraping tool',
   twitterDescription:

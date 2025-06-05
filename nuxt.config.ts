@@ -18,7 +18,7 @@ export default {
 
   runtimeConfig: {
     public: {
-      siteUrl: 'https://sitescrape.netlify.app',
+      siteUrl: 'https://sitescrape.vercel.app',
       description:
         'Easily scrape and extract website data with SiteScrape — a streamlined, browser-based web scraping tool built for speed, simplicity, and convenience.',
     },
@@ -44,14 +44,14 @@ export default {
   modules: ['@nuxtjs/seo', '@stefanobartoletti/nuxt-social-share', '@nuxt/icon', '@nuxt/fonts'],
 
   site: {
-    url: 'https://sitescrape.netlify.app',
+    url: 'https://sitescrape.vercel.app',
     name: 'SiteScrape',
     description:
       'Easily scrape and extract website data with SiteScrape — a streamlined, browser-based web scraping tool built for speed, simplicity, and convenience.',
   },
 
   socialShare: {
-    baseUrl: 'https://sitescrape.netlify.app',
+    baseUrl: 'https://sitescrape.vercel.app',
   },
 
   experimental: {
