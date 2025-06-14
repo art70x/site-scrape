@@ -3,7 +3,6 @@ import metascraper from 'metascraper'
 import metascraperTitle from 'metascraper-title'
 import metascraperDescription from 'metascraper-description'
 import metascraperImage from 'metascraper-image'
-import metascraperLogo from 'metascraper-logo'
 import metascraperUrl from 'metascraper-url'
 import got from 'got'
 import * as cheerio from 'cheerio'
@@ -28,7 +27,6 @@ export default defineEventHandler(async (event) => {
       metascraperTitle(),
       metascraperDescription(),
       metascraperImage(),
-      metascraperLogo(),
       metascraperUrl(),
     ])
 
@@ -44,13 +42,13 @@ export default defineEventHandler(async (event) => {
     const metadata = await scraper({ html: body, url: vUrl })
 
     const $ = cheerio.load(body)
-    let manualLogo =
+    let logo =
       $('link[rel="icon"]').attr('href') ||
       $('link[rel="shortcut icon"]').attr('href') ||
       $('link[rel="apple-touch-icon"]').attr('href')
 
-    if (manualLogo && !manualLogo.startsWith('http')) {
-      manualLogo = new URL(manualLogo, vUrl).href
+    if (logo && !logo.startsWith('http')) {
+      logo = new URL(logo, vUrl).href
     }
 
     const fallbackLogo = `https://www.google.com/s2/favicons?domain=${new URL(vUrl).hostname}&sz=64`
@@ -59,10 +57,10 @@ export default defineEventHandler(async (event) => {
       success: true,
       metadata: {
         ...metadata,
-        logo: metadata.logo || manualLogo || fallbackLogo,
+        logo: logo || fallbackLogo,
       },
     }
-  } catch (err: any) {
+  } catch (err: Error) {
     console.error('Error scraping URL:', err)
     return {
       error: 'Failed to fetch metadata',

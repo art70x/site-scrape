@@ -1,7 +1,7 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default {
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: '2025-05-15',
 
   future: {
     compatibilityVersion: 4,
@@ -41,7 +41,13 @@ export default {
 
   css: ['@/main.css'],
 
-  modules: ['@nuxtjs/seo', '@stefanobartoletti/nuxt-social-share', '@nuxt/icon', '@nuxt/fonts'],
+  modules: [
+    '@nuxtjs/seo',
+    '@stefanobartoletti/nuxt-social-share',
+    '@nuxt/icon',
+    '@nuxt/fonts',
+    '@nuxt/eslint',
+  ],
 
   site: {
     url: 'https://sitescrape.vercel.app',
@@ -50,13 +56,23 @@ export default {
       'Easily scrape and extract website data with SiteScrape — a streamlined, browser-based web scraping tool built for speed, simplicity, and convenience.',
   },
 
+  fonts: {
+    defaults: {
+      weights: [400, 500, 600, 700],
+      styles: ['normal', 'italic'],
+    },
+  },
+
   socialShare: {
     baseUrl: 'https://sitescrape.vercel.app',
   },
 
+  features: {
+    inlineStyles: true,
+  },
+
   experimental: {
     renderJsonPayloads: true,
-    inlineSSRStyles: true,
   },
 
   routeRules: {

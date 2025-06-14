@@ -6,7 +6,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
     "tsconfig.json": "tsconfig*,env.d.ts",
-    "nuxt.config.ts": "*.config.ts,*.config.js,.prettier*,.editorconfig",
+    "nuxt.config.ts": "*.config.ts,*.config.mjs,.prettier*,.editorconfig",
     "package.json": "package*, pnpm*",
     ".gitignore": "*ignore"
   },

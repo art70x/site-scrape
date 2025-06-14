@@ -1,15 +1,31 @@
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+
+const historyKey = 'meta:history'
 
 export const useMetaPreview = () => {
-  const meta = ref<Record<string, any> | null>(null)
+  const meta = ref<Record<string, object> | null>(null)
   const loading = ref(false)
   const error = ref<string | null>(null)
+  const history = ref<string[]>([])
 
   const normalizeUrl = (url: string): string | null => {
     try {
       return new URL(url.startsWith('http') ? url : `https://${url}`).href
     } catch {
       return null
+    }
+  }
+
+  const loadHistory = () => {
+    history.value = JSON.parse(localStorage.getItem(historyKey) || '[]')
+  }
+
+  const updateHistory = (url: string) => {
+    const existing = [...history.value]
+    if (!existing.includes(url)) {
+      const updated = [url, ...existing].slice(0, 10)
+      localStorage.setItem(historyKey, JSON.stringify(updated))
+      history.value = updated
     }
   }
 
@@ -25,14 +41,11 @@ export const useMetaPreview = () => {
 
     try {
       const cacheKey = `meta:${normalized}`
-      let cached = null
-      if (typeof window !== 'undefined') {
-        cached = localStorage.getItem(cacheKey)
-      }
+      const cached = localStorage.getItem(cacheKey)
 
       if (cached) {
         meta.value = { ...JSON.parse(cached), _cached: true }
-        loading.value = false
+        updateHistory(normalized)
         return
       }
 
@@ -40,47 +53,34 @@ export const useMetaPreview = () => {
         query: { url: normalized },
       })
 
-      if ('error' in res) {
-        error.value = res.error
-      } else if (res.success && res.metadata) {
+      if (res?.success && res.metadata) {
         meta.value = res.metadata
-        if (typeof window !== 'undefined') {
-          localStorage.setItem(cacheKey, JSON.stringify(res.metadata))
-        }
+        localStorage.setItem(cacheKey, JSON.stringify(res.metadata))
         updateHistory(normalized)
+      } else {
+        error.value = res?.error || 'No metadata found'
       }
     } catch (e) {
-      error.value = 'Something went wrong.'
       console.error(e)
+      error.value = 'Failed to fetch metadata'
     } finally {
       loading.value = false
     }
   }
 
-  const updateHistory = (url: string) => {
-    const key = 'meta:history'
-    const existing: string[] = JSON.parse(localStorage.getItem(key) || '[]')
-
-    if (!existing.includes(url)) {
-      existing.unshift(url)
-      localStorage.setItem(key, JSON.stringify(existing.slice(0, 10)))
-    }
-  }
-
-  const getHistory = (): string[] => {
-    return JSON.parse(localStorage.getItem('meta:history') || '[]')
-  }
-
   const clearHistory = () => {
-    localStorage.removeItem('meta:history')
+    localStorage.removeItem(historyKey)
+    history.value = []
   }
+
+  onMounted(loadHistory)
 
   return {
     meta,
     loading,
     error,
     fetchMeta,
-    getHistory,
+    history,
     clearHistory,
   }
 }
