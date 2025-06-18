@@ -37,7 +37,7 @@
 }
 
 @theme {
-  --font-sans: 'Inter', Roboto, 'Segoe UI', 'sans-serif';
+  --font-sans: 'Satoshi', Roboto, 'Segoe UI', 'sans-serif';
   --color-background: var(--color-zinc-100);
   --color-foreground: var(--color-gray-950);
   --color-primary: var(--color-blue-500);
@@ -80,7 +80,7 @@
   }
 
   a {
-    @apply text-gray-600 italic hover:not-italic hover:underline;
+    @apply text-gray-700 italic hover:not-italic hover:underline;
   }
 
   h1,

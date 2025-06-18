@@ -1,9 +1,9 @@
 <script setup lang="ts">
 defineProps<{
   meta: {
+    og: { image?: string }
     title?: string
     description?: string
-    image?: string
     url?: string
   }
 }>()
@@ -20,22 +20,19 @@ defineProps<{
         {{ meta.title || 'No title' }}
       </h2>
 
-      <p class="text-gray-700">{{ meta.description || 'No description available' }}</p>
+      <p class="text-gray-700">
+        {{ meta.description || 'No description available' }}
+      </p>
 
       <img
-        v-if="meta.image"
+        v-if="meta.og.image"
         class="mt-2 w-full rounded"
-        :src="meta.image"
+        :src="meta.og.image"
         :alt="`${meta.title} OpenGraph Image`"
         loading="lazy"
       />
 
-      <a
-        :href="meta.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-1 text-primary underline underline-offset-2"
-      >
+      <a :href="meta.url" target="_blank" rel="noopener noreferrer">
         {{ meta.url }}
       </a>
     </section>

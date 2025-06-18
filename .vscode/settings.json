@@ -1,16 +1,20 @@
 {
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "explorer.fileNesting.enabled": true,
+  "IDX.aI.enableInlineCompletion": true,
+  "IDX.aI.enableCodebaseIndexing": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "always"
   },
-  "editor.formatOnSave": true,
-  "explorer.fileNesting.enabled": true,
+  "eslint.codeActionsOnSave.rules": ["@master/css/class-order"],
+  "editor.quickSuggestions": {
+    "strings": true
+  },
   "explorer.fileNesting.patterns": {
     "tsconfig.json": "tsconfig*,env.d.ts",
-    "nuxt.config.ts": "*.config.ts,*.config.mjs,.prettier*,.editorconfig",
+    "nuxt.config.ts": "*.config.ts,*.config.mjs,master.css*,.prettier*,.editorconfig",
     "package.json": "package*, pnpm*",
     ".gitignore": "*ignore"
-  },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "IDX.aI.enableInlineCompletion": true,
-  "IDX.aI.enableCodebaseIndexing": true
+  }
 }

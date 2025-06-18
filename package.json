@@ -1,48 +1,43 @@
 {
   "name": "nuxt-app",
+  "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt build && nuxt preview",
     "postinstall": "nuxt prepare",
-    "format": "prettier -w *.ts app",
-    "format:watch": "onchange \"app\" -- prettier -w --ignore-unknown {{changed}}",
+    "format": "prettier -w *.ts app server",
+    "format:watch": "onchange \"app\" \"server\" -- prettier -w --ignore-unknown {{changed}}",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "predev": "nr lint:fix && nr format && cls"
   },
   "dependencies": {
-    "cheerio": "^1.0.0",
-    "got": "^14.4.7",
-    "metascraper": "^5.46.15",
-    "metascraper-description": "^5.46.15",
-    "metascraper-image": "^5.46.15",
-    "metascraper-title": "^5.46.15",
-    "metascraper-url": "^5.46.15",
-    "nuxt": "^3.17.5",
-    "vue": "latest",
-    "vue-router": "latest"
-  },
-  "devDependencies": {
-    "@antfu/ni": "^25.0.0",
-    "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/ri": "^1.2.5",
     "@nuxt/eslint": "1.4.1",
     "@nuxt/fonts": "0.11.4",
     "@nuxt/icon": "1.13.0",
     "@nuxtjs/seo": "3.0.3",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/ri": "^1.2.5",
+    "cheerio": "^1.1.0",
+    "eslint": "^9.29.0",
+    "node-fetch": "^3.3.2",
     "@stefanobartoletti/nuxt-social-share": "1.2.3",
     "@tailwindcss/vite": "latest",
-    "eslint": "^9.28.0",
+    "tailwindcss": "latest",
+    "nuxt": "^3.17.5",
+    "vue": "^3.5.16",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
     "nuxi": "^3.25.1",
     "onchange": "^7.1.0",
     "prettier": "^3.5.3",
     "prettier-plugin-css-order": "^2.1.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "latest",
     "typescript": "^5.8.3"
   },
-  "packageManager": "pnpm@10.12.1",
-  "license": "MIT"
+  "packageManager": "pnpm@10.12.1"
 }

@@ -7,7 +7,9 @@ useSeoMeta({
   ogLocale: 'en_US',
   ogUrl: 'https://sitescrape.vercel.app/',
   twitterCard: 'summary_large_image',
+  twitterCreator: 'art70x',
   themeColor: '#2b7fff',
+  googleSiteVerification: 'FSVkWUhVYofaUBvZktFhGzEpTWJMcDPimVgqHFTBMNo',
 })
 
 useHead({

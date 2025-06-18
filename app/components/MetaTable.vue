@@ -1,10 +1,15 @@
 <script setup lang="ts">
 const props = defineProps<{
   meta: {
+    og: {
+      image?: string
+    }
     title?: string
     description?: string
-    image?: string
-    logo?: string
+    icons: {
+      favicon?: string
+      appleTouchIcon?: string
+    }
     url?: string
   }
 }>()
@@ -12,8 +17,8 @@ const props = defineProps<{
 const rows = {
   title: props.meta.title,
   description: props.meta.description,
-  image: props.meta.image,
-  logo: props.meta.logo,
+  image: props.meta.og.image,
+  icon: props.meta.icons.favicon || props.meta.icons.appleTouchIcon,
   url: props.meta.url,
 }
 

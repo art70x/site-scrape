@@ -1,6 +1,7 @@
 import tailwindcss from '@tailwindcss/vite'
 
-export default {
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
 
   future: {
@@ -56,15 +57,25 @@ export default {
       'Easily scrape and extract website data with SiteScrape — a streamlined, browser-based web scraping tool built for speed, simplicity, and convenience.',
   },
 
-  fonts: {
+  sitemap: {
     defaults: {
-      weights: [400, 500, 600, 700],
-      styles: ['normal', 'italic'],
+      lastmod: new Date().toISOString(),
+      priority: 1,
+      changefreq: 'weekly',
     },
+    xslColumns: [
+      { label: 'URL', width: '50%' },
+      { label: 'Last Modified', select: 'sitemap:lastmod', width: '25%' },
+      { label: 'Priority', select: 'sitemap:priority', width: '12.5%' },
+      { label: 'Change Frequency', select: 'sitemap:changefreq', width: '12.5%' },
+    ],
   },
 
-  socialShare: {
-    baseUrl: 'https://sitescrape.vercel.app',
+  fonts: {
+    defaults: {
+      weights: [400, 500, 600, 700, 800],
+      styles: ['normal', 'italic'],
+    },
   },
 
   features: {
@@ -76,11 +87,11 @@ export default {
   },
 
   routeRules: {
-    '/*.{svg,css,woff2,png}': {
+    '/**/*.{svg,css,ttf,woff,png}': {
       swr: true,
       cache: {
         maxAge: 432000,
       },
     },
   },
-}
+})

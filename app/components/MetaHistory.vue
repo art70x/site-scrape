@@ -1,18 +1,6 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-
-const history = ref<string[]>([])
+defineProps<{ history: string[] }>()
 defineEmits(['select'])
-
-const loadHistory = () => {
-  const data = localStorage.getItem('meta:history')
-  history.value = data ? JSON.parse(data) : []
-}
-
-onMounted(() => {
-  loadHistory()
-  window.addEventListener('storage', loadHistory)
-})
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 # SiteCraper
 
-[![Vercel Deploy](https://deploy-badge.vercel.app/vercel/sitescrape?style=for-the-badge&logo=vercel)](https://sitescrape.vercel.app)
+[![Vercel Deploy](https://deploy-badge.vercel.app/vercel/sitescrape?style=for-the-badge&logo=vercel)](https://sitescrape.vercel.app/?ref=github&utm_source=github_repo_readme)
 
 Easily scrape and extract website data with SiteScrape — a streamlined, browser-based web scraping tool built for speed, simplicity, and convenience.
 
