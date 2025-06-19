@@ -17,25 +17,6 @@ export default defineNuxtConfig({
     },
   },
 
-  runtimeConfig: {
-    public: {
-      siteUrl: 'https://sitescrape.vercel.app',
-      description:
-        'Easily scrape and extract website data with SiteScrape — a streamlined, browser-based web scraping tool built for speed, simplicity, and convenience.',
-    },
-  },
-
-  build: {
-    minify: 'terser',
-    terser: {
-      terserOptions: {
-        compress: {
-          drop_console: true,
-        },
-      },
-    },
-  },
-
   vite: {
     plugins: [tailwindcss()],
   },
@@ -48,6 +29,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/fonts',
     '@nuxt/eslint',
+    '@nuxtjs/fontaine',
   ],
 
   site: {
