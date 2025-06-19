@@ -77,16 +77,16 @@ async function submitForm() {
 </script>
 
 <template>
-  <div class="mx-auto max-w-xl px-4 py-8">
+  <div class="mx-auto max-w-xl px-3 py-6">
     <section id="hero" class="mb-6 flex flex-col items-center">
       <img
         src="/icon.svg"
-        height="90"
-        width="115.375"
+        height="108"
+        width="108"
         alt="SiteScrape icon"
         class="drop-shadow-xl drop-shadow-primary/25"
       />
-      <h1 class="mb-6">SiteScrape - SEO Analyzer</h1>
+      <h1 class="mb-4">SiteScrape - SEO Analyzer</h1>
       <p class="mt-2 max-w-md text-base text-gray-600">
         Easily scrape and extract website data with SiteScrape — a streamlined, browser-based web
         scraping tool built for speed, simplicity, and convenience.
@@ -94,7 +94,7 @@ async function submitForm() {
     </section>
 
     <section id="form">
-      <form class="mb-4 flex flex-row items-center gap-x-2" @submit.prevent="submitForm">
+      <form class="flex flex-row items-center gap-x-2" @submit.prevent="submitForm">
         <input
           v-model="query"
           type="url"
@@ -112,7 +112,7 @@ async function submitForm() {
           :disabled="!normalizedUrl"
           aria-label="Fetch metadata for entered URL"
         >
-          <Icon name="ri:search-2-line" />
+          <Icon name="ri:search-2-line" class="mr-1 h-4 w-4" />
           Fetch
         </button>
       </form>
@@ -143,7 +143,7 @@ async function submitForm() {
       </Transition>
     </section>
 
-    <section v-if="isFetched" id="share" class="space-y-3 pt-8">
+    <section v-if="isFetched" id="share" class="space-y-3">
       <h2 class="text-lg font-semibold text-zinc-800">🔗 Share this preview</h2>
       <div class="flex flex-wrap items-center gap-3">
         <SocialShare
@@ -167,7 +167,7 @@ async function submitForm() {
       </div>
     </section>
 
-    <section class="mt-8">
+    <section>
       <div class="mb-2 flex items-center justify-between">
         <h2 class="flex items-center gap-2 text-lg font-semibold">Recently Searched</h2>
         <button
@@ -184,6 +184,9 @@ async function submitForm() {
 </template>
 
 <style scoped>
+section {
+  margin: 24px unset;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease;
