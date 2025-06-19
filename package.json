@@ -15,20 +15,21 @@
     "predev": "nr lint:fix && nr format && cls"
   },
   "dependencies": {
+    "@iconify-json/ri": "^1.2.5",
     "@nuxt/eslint": "1.4.1",
     "@nuxt/fonts": "0.11.4",
     "@nuxt/icon": "1.13.0",
+    "@nuxtjs/fontaine": "0.5.0",
     "@nuxtjs/seo": "3.0.3",
-    "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/ri": "^1.2.5",
+    "@stefanobartoletti/nuxt-social-share": "1.2.3",
+    "@tailwindcss/vite": "latest",
     "cheerio": "^1.1.0",
     "eslint": "^9.29.0",
     "node-fetch": "^3.3.2",
-    "@stefanobartoletti/nuxt-social-share": "1.2.3",
-    "@tailwindcss/vite": "latest",
-    "tailwindcss": "latest",
     "nuxt": "^3.17.5",
-    "vue": "^3.5.16",
+    "nuxt-booster": "3.2.9",
+    "tailwindcss": "latest",
+    "vue": "^3.5.17",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
@@ -36,7 +37,7 @@
     "onchange": "^7.1.0",
     "prettier": "^3.5.3",
     "prettier-plugin-css-order": "^2.1.2",
-    "prettier-plugin-tailwindcss": "^0.6.11",
+    "prettier-plugin-tailwindcss": "^0.6.12",
     "typescript": "^5.8.3"
   },
   "packageManager": "pnpm@10.12.1"

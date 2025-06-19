@@ -38,10 +38,18 @@
 
 @theme {
   --font-sans: 'Satoshi', Roboto, 'Segoe UI', 'sans-serif';
-  --color-background: var(--color-zinc-100);
+  --color-background: var(--background);
   --color-foreground: var(--color-gray-950);
-  --color-primary: var(--color-blue-500);
-  --color-primary-hover: var(--color-blue-600);
+  --color-primary: #2776ec;
+  --color-primary-hover: #274fec;
+}
+
+:root {
+  --background: #f1f6fe;
+}
+
+.dark {
+  --background: #040c18;
 }
 
 @layer base {
@@ -80,7 +88,7 @@
   }
 
   a {
-    @apply text-gray-700 italic hover:not-italic hover:underline;
+    @apply font-medium text-gray-700 italic hover:not-italic hover:underline;
   }
 
   h1,
@@ -91,5 +99,12 @@
 }
 
 @utility btn {
-  @apply inline-flex cursor-pointer items-center gap-1 rounded-md bg-primary px-4 py-2 font-medium text-gray-50 ta-200 hover:bg-primary-hover focus:ring-2 focus:ring-primary-hover focus:ring-offset-2;
+  @apply flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-medium text-gray-50;
+  box-shadow:
+    hsla(0, 0%, 100%, 0.1) 0 0 0 1px inset,
+    hsla(0, 0%, 100%, 0.15) 0 1px 0 0 inset,
+    hsla(0, 0%, 100%, 0.05) 0 0 25px 1px inset,
+    0 0 0 1px #27272a,
+    0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -4px rgba(0, 0, 0, 0.05);
 }

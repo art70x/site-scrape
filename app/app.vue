@@ -8,7 +8,7 @@ useSeoMeta({
   ogUrl: 'https://sitescrape.vercel.app/',
   twitterCard: 'summary_large_image',
   twitterCreator: 'art70x',
-  themeColor: '#2b7fff',
+  themeColor: '#2776ec',
   googleSiteVerification: 'FSVkWUhVYofaUBvZktFhGzEpTWJMcDPimVgqHFTBMNo',
 })
 

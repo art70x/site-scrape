@@ -6,7 +6,7 @@ Easily scrape and extract website data with SiteScrape — a streamlined, browse
 
 ## Credits
 
-- Some of the CSS code is copied from [MFM-347/VLayer](https://github.com/MFM-347/VLayer)
+- Some of the code is copied from [MFM-347/VLayer](https://github.com/MFM-347/VLayer)
 
 ## License
 

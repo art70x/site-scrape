@@ -17,14 +17,6 @@ export default defineNuxtConfig({
     },
   },
 
-  runtimeConfig: {
-    public: {
-      siteUrl: 'https://sitescrape.vercel.app',
-      description:
-        'Easily scrape and extract website data with SiteScrape — a streamlined, browser-based web scraping tool built for speed, simplicity, and convenience.',
-    },
-  },
-
   build: {
     minify: 'terser',
     terser: {
@@ -48,6 +40,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/fonts',
     '@nuxt/eslint',
+    'nuxt-booster',
+    '@nuxtjs/fontaine',
   ],
 
   site: {
@@ -69,6 +63,25 @@ export default defineNuxtConfig({
       { label: 'Priority', select: 'sitemap:priority', width: '12.5%' },
       { label: 'Change Frequency', select: 'sitemap:changefreq', width: '12.5%' },
     ],
+  },
+
+  booster: {
+    optimizeSSR: {
+      cleanPreloads: true,
+      cleanPrefetches: true,
+      inlineStyles: true,
+    },
+
+    performanceMetrics: {
+      device: {
+        hardwareConcurrency: { min: 2, max: 48 },
+        deviceMemory: { min: 2 },
+      },
+      timing: {
+        fcp: 800,
+        dcl: 1200,
+      },
+    },
   },
 
   fonts: {

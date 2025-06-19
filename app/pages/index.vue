@@ -2,13 +2,10 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from '#imports'
 
-const {
-  public: { siteUrl, description },
-} = useRuntimeConfig()
-
 useSeoMeta({
   title: 'SiteScrape - SEO Analyzer',
-  description,
+  description:
+    'Easily scrape and extract website data with SiteScrape — a streamlined, browser-based web scraping tool built for speed, simplicity, and convenience.',
   ogTitle: 'SiteScrape - SEO Analyzer',
   ogDescription:
     'Scrape and extract website data easily with SiteScrape — a fast, simple, browser-based web scraping tool',
@@ -18,7 +15,7 @@ useSeoMeta({
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: siteUrl }],
+  link: [{ rel: 'canonical', href: 'https://sitescrape.vercel.app/' }],
 })
 
 defineOgImageComponent('NuxtSeo', {
@@ -61,7 +58,7 @@ onMounted(() => {
 
 function copy() {
   if (!normalizedUrl.value) return
-  navigator.clipboard.writeText(`${siteUrl}?url=${normalizedUrl.value}`)
+  navigator.clipboard.writeText(`${'https://sitescrape.vercel.app/'}?url=${normalizedUrl.value}`)
   copied.value = true
   setTimeout(() => (copied.value = false), 1500)
 
@@ -90,7 +87,10 @@ async function submitForm() {
         class="drop-shadow-xl drop-shadow-primary/25"
       />
       <h1 class="mb-6">SiteScrape – SEO Analyzer</h1>
-      <p class="mt-2 max-w-md text-base text-gray-600">{{ description }}</p>
+      <p class="mt-2 max-w-md text-base text-gray-600">
+        Easily scrape and extract website data with SiteScrape — a streamlined, browser-based web
+        scraping tool built for speed, simplicity, and convenience.
+      </p>
     </section>
 
     <section id="form">
@@ -112,7 +112,7 @@ async function submitForm() {
           :disabled="!normalizedUrl"
           aria-label="Fetch metadata for entered URL"
         >
-          <Icon name="mdi:magnify" />
+          <Icon name="ri:search-2-fill" />
           Fetch
         </button>
       </form>
@@ -126,23 +126,21 @@ async function submitForm() {
           aria-live="assertive"
           class="rounded bg-red-100 px-4 py-3 text-sm text-red-700"
         >
-          <Icon name="mdi:alert-circle-outline" class="mr-1 inline" />
+          <Icon name="ri:alert-fill" class="mr-1 inline" />
           {{ error }}
         </div>
       </Transition>
 
       <Transition name="fade" mode="out-in">
         <div v-if="!isFetched && query" class="text-center text-gray-500">
-          <Icon name="mdi:loading" class="mr-1 inline animate-spin" />
+          <Icon name="ri:loader-fill" class="mr-1 inline animate-spin" />
           Fetching metadata...
         </div>
       </Transition>
 
       <Transition name="fade" mode="out-in">
-        <MetaCard v-if="isFetched" :meta="meta" class="mt-6" />
+        <MetaTable v-if="isFetched" :meta="meta" class="mt-4" />
       </Transition>
-
-      <MetaTable v-if="isFetched" :meta="meta" class="mt-4" />
     </section>
 
     <section v-if="isFetched" id="share" class="space-y-3 pt-8">
@@ -153,7 +151,7 @@ async function submitForm() {
           :key="network"
           :network="network"
           :styled="true"
-          :url="`${siteUrl}?url=${normalizedUrl}`"
+          :url="`${'https://sitescrape.vercel.app/'}?url=${normalizedUrl}`"
           title="Check out this link on SiteScrape!"
           hashtags="webdev,metadata,preview"
         />
@@ -171,10 +169,7 @@ async function submitForm() {
 
     <section class="mt-8">
       <div class="mb-2 flex items-center justify-between">
-        <h2 class="flex items-center gap-2 text-lg font-semibold">
-          <Icon name="mdi:history" />
-          Recently Searched
-        </h2>
+        <h2 class="flex items-center gap-2 text-lg font-semibold">Recently Searched</h2>
         <button
           v-if="history.length"
           class="text-sm text-red-500 hover:underline"
