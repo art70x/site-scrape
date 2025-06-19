@@ -17,17 +17,6 @@ export default defineNuxtConfig({
     },
   },
 
-  build: {
-    minify: 'terser',
-    terser: {
-      terserOptions: {
-        compress: {
-          drop_console: true,
-        },
-      },
-    },
-  },
-
   vite: {
     plugins: [tailwindcss()],
   },
@@ -40,7 +29,6 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/fonts',
     '@nuxt/eslint',
-    'nuxt-booster',
     '@nuxtjs/fontaine',
   ],
 
@@ -63,25 +51,6 @@ export default defineNuxtConfig({
       { label: 'Priority', select: 'sitemap:priority', width: '12.5%' },
       { label: 'Change Frequency', select: 'sitemap:changefreq', width: '12.5%' },
     ],
-  },
-
-  booster: {
-    optimizeSSR: {
-      cleanPreloads: true,
-      cleanPrefetches: true,
-      inlineStyles: true,
-    },
-
-    performanceMetrics: {
-      device: {
-        hardwareConcurrency: { min: 2, max: 48 },
-        deviceMemory: { min: 2 },
-      },
-      timing: {
-        fcp: 800,
-        dcl: 1200,
-      },
-    },
   },
 
   fonts: {

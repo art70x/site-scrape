@@ -86,7 +86,7 @@ async function submitForm() {
         alt="SiteScrape icon"
         class="drop-shadow-xl drop-shadow-primary/25"
       />
-      <h1 class="mb-6">SiteScrape – SEO Analyzer</h1>
+      <h1 class="mb-6">SiteScrape - SEO Analyzer</h1>
       <p class="mt-2 max-w-md text-base text-gray-600">
         Easily scrape and extract website data with SiteScrape — a streamlined, browser-based web
         scraping tool built for speed, simplicity, and convenience.
@@ -112,7 +112,7 @@ async function submitForm() {
           :disabled="!normalizedUrl"
           aria-label="Fetch metadata for entered URL"
         >
-          <Icon name="ri:search-2-fill" />
+          <Icon name="ri:search-2-line" />
           Fetch
         </button>
       </form>
@@ -126,14 +126,14 @@ async function submitForm() {
           aria-live="assertive"
           class="rounded bg-red-100 px-4 py-3 text-sm text-red-700"
         >
-          <Icon name="ri:alert-fill" class="mr-1 inline" />
+          <Icon name="ri:alert-line" class="mr-1 inline" />
           {{ error }}
         </div>
       </Transition>
 
       <Transition name="fade" mode="out-in">
         <div v-if="!isFetched && query" class="text-center text-gray-500">
-          <Icon name="ri:loader-fill" class="mr-1 inline animate-spin" />
+          <Icon name="ri:loader-line" class="mr-1 inline animate-spin" />
           Fetching metadata...
         </div>
       </Transition>

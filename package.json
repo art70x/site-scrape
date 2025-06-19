@@ -27,7 +27,6 @@
     "eslint": "^9.29.0",
     "node-fetch": "^3.3.2",
     "nuxt": "^3.17.5",
-    "nuxt-booster": "3.2.9",
     "tailwindcss": "latest",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
