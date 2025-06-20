@@ -5,7 +5,7 @@
       href="#main"
       >Skip to content</a
     >
-    <FadeContent blur :duration="700">
+    <FadeContent blur :duration="540">
       <main id="main" class="mx-auto max-w-xl flex-grow px-4 pt-6 sm:px-6 lg:px-8" role="main">
         <slot />
       </main>

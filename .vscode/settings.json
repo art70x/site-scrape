@@ -7,13 +7,12 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "always"
   },
-  "eslint.codeActionsOnSave.rules": ["@master/css/class-order"],
   "editor.quickSuggestions": {
     "strings": true
   },
   "explorer.fileNesting.patterns": {
     "tsconfig.json": "tsconfig*,env.d.ts",
-    "nuxt.config.ts": "*.config.ts,*.config.mjs,master.css*,.prettier*,.editorconfig",
+    "nuxt.config.ts": "*.config.ts,*.config.mjs,.prettier*,.editorconfig",
     "package.json": "package*, pnpm*",
     ".gitignore": "*ignore"
   }
